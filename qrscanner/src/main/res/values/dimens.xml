@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="qr_reticle_ripple_stroke_width">4dp</dimen>
+    <dimen name="qr_reticle_ripple_size_offset">40dp</dimen>
+    <dimen name="qr_reticle_stroke_width">4dp</dimen>
+    <dimen name="qr_reticle_corner_radius">8dp</dimen>
+    <dimen name="qr_reticle_size">220dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="map_search_text_corners">32dp</dimen>
+    <dimen name="top_action_bar_padding_horizontal">8dp</dimen>
+    <dimen name="top_action_bar_height">64dp</dimen>
+    <dimen name="top_action_button_padding">12dp</dimen>
+</resources>

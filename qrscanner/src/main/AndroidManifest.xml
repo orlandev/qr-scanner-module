@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ondev.qrscannermodule"
+    >
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <application>
+        <activity
+            android:name="com.ondev.qrscannermodule.QrActivity"
+            android:exported="false"
+            android:label="@string/title_activity_qr"
+            android:theme="@style/Theme.QrScannerModule.NoActionBar" />
+    </application>
+</manifest>
