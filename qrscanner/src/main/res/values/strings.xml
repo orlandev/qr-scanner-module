@@ -1,8 +1,7 @@
 <resources>
     <string name="title_activity_qr">QrActivity</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="camera_rationale_info">Para poder escanear codigos QR necesita otorgarle los permisos a la app.</string>
-    <string name="prompt_point_at_a_barcode">Por favor escanee el código QR</string>
-    <string name="prompt_move_camera_closer">" Por favor, acerque un poco más la cámara al QR"</string>
-    <string name="prompt_searching">Procesando…</string>
+    <string name="camera_rationale_info">In order to scan QR codes, you need to grant the app permissions.</string>
+    <string name="prompt_point_at_a_barcode">Please scan the QR code</string>
+    <string name="prompt_move_camera_closer">Please move the camera a little closer to the QR</string>
+    <string name="prompt_searching">Processing…</string>
 </resources>

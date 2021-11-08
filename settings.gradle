@@ -7,5 +7,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "QrScannerModule"
-include ':sample'
+include ':app'
 include ':qrscanner'

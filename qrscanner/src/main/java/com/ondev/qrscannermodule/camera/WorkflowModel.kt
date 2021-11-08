@@ -19,11 +19,8 @@ package com.ondev.qrscannermodule.camera
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.mlkit.vision.barcode.Barcode
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class WorkflowModel @Inject constructor() : ViewModel() {
+class WorkflowModel : ViewModel() {
 
     val workflowState = MutableLiveData<WorkflowState>()
     val detectedBarcode = MutableLiveData<Barcode>()
