@@ -1,9 +1,13 @@
 package com.ondev.qrscanner
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContract
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,9 +20,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import com.ondev.qrscanner.ui.theme.QrScannerModuleTheme
-import com.ondev.qrscannermodule.QrActivityResultContract
+import com.ondev.qrscannermodule.QrActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -58,4 +61,22 @@ fun App() {
         }
 
     }
+}
+class QrActivityResultContract :
+    ActivityResultContract<Int, String>() {
+
+    override fun parseResult(
+        resultCode: Int, intent: Intent?
+    ): String {
+        return if (resultCode == Activity.RESULT_OK) {
+            return intent?.getStringExtra("QR_SCANNER_RESULT") ?: ""
+        } else {
+            ""
+        }
+    }
+
+    override fun createIntent(context: Context, input: Int): Intent {
+        return Intent(context, QrActivity::class.java)
+    }
+
 }
