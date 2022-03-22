@@ -3,7 +3,7 @@
     package="com.ondev.qrscanner">
 
     <application
-        android:name="com.ondev.qrscanner.MainApplication"
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
