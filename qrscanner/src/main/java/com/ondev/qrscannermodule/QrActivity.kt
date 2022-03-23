@@ -133,7 +133,7 @@ class QrActivity : AppCompatActivity(), View.OnClickListener, EasyPermissions.Pe
     private fun setUpWorkflowModel() {
         // Observes the workflow state changes, if happens, update the overlay view indicators and
         // camera preview state.
-        workflowModel.workflowState.observe(this, { workflowState ->
+        workflowModel.workflowState.observe(this) { workflowState ->
             if (workflowState != null || !Objects.equals(currentWorkflowState, workflowState)) {
 
                 currentWorkflowState = workflowState
@@ -170,14 +170,14 @@ class QrActivity : AppCompatActivity(), View.OnClickListener, EasyPermissions.Pe
                     if (shouldPlayPromptChipEnteringAnimation && !it.isRunning) it.start()
                 }
             }
-        })
+        }
 
-        workflowModel.detectedBarcode.observe(this, { barcode ->
+        workflowModel.detectedBarcode.observe(this) { barcode ->
             if (barcode != null) {
                 Log.d(TAG, "setUpWorkflowModel: ${barcode.rawValue}")
                 processBarcodeValue(barcode.rawValue!!)
             }
-        })
+        }
     }
 
     private fun processBarcodeValue(barcodeRaw: String) {

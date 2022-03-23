@@ -23,8 +23,8 @@ import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.widget.FrameLayout
 import com.google.android.gms.common.images.Size
-import com.ondev.qrscanner.Utils.BarcodeUtils
 import com.ondev.qrscannermodule.R
+import com.ondev.qrscannermodule.Utils.BarcodeUtils
 import java.io.IOException
 
 /** Preview the camera image in the screen.  */

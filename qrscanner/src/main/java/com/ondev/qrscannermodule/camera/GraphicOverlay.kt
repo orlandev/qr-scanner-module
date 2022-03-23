@@ -22,9 +22,8 @@ import android.graphics.Rect
 import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
-import com.ondev.qrscanner.Utils.BarcodeUtils
+import com.ondev.qrscannermodule.Utils.BarcodeUtils
 import com.ondev.qrscannermodule.camera.GraphicOverlay.Graphic
-import java.util.*
 
 /**
  * A view which renders a series of custom graphics to be overlaid on top of an associated preview

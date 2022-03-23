@@ -26,7 +26,7 @@ import android.view.Surface
 import android.view.SurfaceHolder
 import android.view.WindowManager
 import com.google.android.gms.common.images.Size
-import com.ondev.qrscanner.Utils.BarcodeUtils
+import com.ondev.qrscannermodule.Utils.BarcodeUtils
 import java.io.IOException
 import java.nio.ByteBuffer
 import java.util.*
