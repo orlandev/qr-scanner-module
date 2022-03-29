@@ -15,7 +15,6 @@
  */
 
 package com.ondev.qrscannermodule.camera
-
 import android.content.Context
 import android.graphics.ImageFormat
 import android.hardware.Camera
@@ -88,9 +87,14 @@ class CameraSource(private val graphicOverlay: GraphicOverlay) {
     internal fun start(surfaceHolder: SurfaceHolder) {
         if (camera != null) return
 
-        camera = createCamera().apply {
-            setPreviewDisplay(surfaceHolder)
-            startPreview()
+        try {
+
+            camera = createCamera().apply {
+                setPreviewDisplay(surfaceHolder)
+                startPreview()
+            }
+        } catch (ex: Exception) {
+            ex.printStackTrace()
         }
 
         processingThread = Thread(processingRunnable).apply {
@@ -302,7 +306,7 @@ class CameraSource(private val graphicOverlay: GraphicOverlay) {
      * associated processing is done for the previous frame, detection on the mostly recently received
      * frame will immediately start on the same thread.
      */
-    private inner class FrameProcessingRunnable : Runnable {
+    private inner class FrameProcessingRunnable() : Runnable {
 
         // This lock guards all of the member variables below.
         private val lock = Object()
@@ -323,22 +327,22 @@ class CameraSource(private val graphicOverlay: GraphicOverlay) {
          * Sets the frame data received from the camera. This adds the previous unused frame buffer (if
          * present) back to the camera, and keeps a pending reference to the frame data for future use.
          */
-        fun setNextFrame(data: ByteArray, camera: Camera) {
+        fun setNextFrame(data: ByteArray?, camera: Camera) {
             synchronized(lock) {
                 pendingFrameData?.let {
                     camera.addCallbackBuffer(it.array())
                     pendingFrameData = null
                 }
+         if (!bytesToByteBuffer.containsKey(data)) {
+                        Log.d(
+                            TAG,
+                            "Skipping frame. Could not find ByteBuffer associated with the image data from the camera."
+                        )
+                        return
+                    }
 
-                if (!bytesToByteBuffer.containsKey(data)) {
-                    Log.d(
-                        TAG,
-                        "Skipping frame. Could not find ByteBuffer associated with the image data from the camera."
-                    )
-                    return
-                }
+                    pendingFrameData = bytesToByteBuffer[data]
 
-                pendingFrameData = bytesToByteBuffer[data]
 
                 // Notify the processor thread if it is waiting on the next frame (see below).
                 lock.notifyAll()
