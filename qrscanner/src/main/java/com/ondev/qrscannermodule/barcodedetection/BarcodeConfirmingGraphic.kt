@@ -18,9 +18,9 @@ package com.ondev.qrscannermodule.barcodedetection
 
 import android.graphics.Canvas
 import android.graphics.Path
-import com.google.mlkit.vision.barcode.Barcode
-import com.ondev.qrscannermodule.common.PreferenceUtils
+import com.google.mlkit.vision.barcode.common.Barcode
 import com.ondev.qrscannermodule.camera.GraphicOverlay
+import com.ondev.qrscannermodule.common.PreferenceUtils
 
 /** Guides user to move camera closer to confirm the detected barcode.  */
 internal class BarcodeConfirmingGraphic(

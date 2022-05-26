@@ -22,10 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.ondev.qrscanner.ui.theme.QrScannerModuleTheme
 import com.ondev.qrscannermodule.QrActivity
-import dagger.hilt.android.AndroidEntryPoint
 
-
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

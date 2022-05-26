@@ -17,7 +17,7 @@
 package com.ondev.qrscannermodule.common
 
 import android.graphics.Bitmap
-import com.ondev.qrscanner.Utils.BarcodeUtils
+import com.ondev.qrscannermodule.Utils.BarcodeUtils
 import com.ondev.qrscannermodule.camera.FrameMetadata
 import java.nio.ByteBuffer
 

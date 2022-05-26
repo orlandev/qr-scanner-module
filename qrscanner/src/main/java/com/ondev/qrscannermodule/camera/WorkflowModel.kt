@@ -18,7 +18,8 @@ package com.ondev.qrscannermodule.camera
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.mlkit.vision.barcode.Barcode
+
+import com.google.mlkit.vision.barcode.common.Barcode
 
 class WorkflowModel : ViewModel() {
 

@@ -18,9 +18,9 @@ package com.ondev.qrscannermodule.common
 
 import android.content.Context
 import android.graphics.RectF
-import com.google.mlkit.vision.barcode.Barcode
-import com.ondev.qrscannermodule.camera.GraphicOverlay
+import com.google.mlkit.vision.barcode.common.Barcode
 import com.ondev.qrscannermodule.R
+import com.ondev.qrscannermodule.camera.GraphicOverlay
 
 object PreferenceUtils {
 

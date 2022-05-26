@@ -18,17 +18,16 @@ package com.ondev.qrscannermodule.barcodedetection
 
 import android.animation.ValueAnimator
 import android.util.Log
-import androidx.annotation.MainThread
 import com.google.android.gms.tasks.Task
-import com.google.mlkit.vision.barcode.Barcode
 import com.google.mlkit.vision.barcode.BarcodeScanning
+import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
-import com.ondev.qrscannermodule.common.InputInfo
-import com.ondev.qrscannermodule.common.PreferenceUtils
 import com.ondev.qrscannermodule.camera.CameraReticleAnimator
 import com.ondev.qrscannermodule.camera.FrameProcessorBase
 import com.ondev.qrscannermodule.camera.GraphicOverlay
 import com.ondev.qrscannermodule.camera.WorkflowModel
+import com.ondev.qrscannermodule.common.InputInfo
+import com.ondev.qrscannermodule.common.PreferenceUtils
 import java.io.IOException
 
 /** A processor to run the barcode detector.  */
@@ -41,7 +40,7 @@ class BarcodeProcessor(graphicOverlay: GraphicOverlay, private val workflowModel
     override fun detectInImage(image: InputImage): Task<List<Barcode>> =
         scanner.process(image)
 
-    @MainThread
+
     override fun onSuccess(
         inputInfo: InputInfo,
         results: List<Barcode>,

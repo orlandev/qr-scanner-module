@@ -18,7 +18,6 @@ package com.ondev.qrscannermodule.camera
 
 import android.os.SystemClock
 import android.util.Log
-import androidx.annotation.GuardedBy
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.TaskExecutors
@@ -33,17 +32,13 @@ import java.nio.ByteBuffer
 abstract class FrameProcessorBase<T> : FrameProcessor {
 
     // To keep the latest frame and its metadata.
-    @GuardedBy("this")
     private var latestFrame: ByteBuffer? = null
 
-    @GuardedBy("this")
     private var latestFrameMetaData: FrameMetadata? = null
 
     // To keep the frame and metadata in process.
-    @GuardedBy("this")
     private var processingFrame: ByteBuffer? = null
 
-    @GuardedBy("this")
     private var processingFrameMetaData: FrameMetadata? = null
     private val executor = ScopedExecutor(TaskExecutors.MAIN_THREAD)
 

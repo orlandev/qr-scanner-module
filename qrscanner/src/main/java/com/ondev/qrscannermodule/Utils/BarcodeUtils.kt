@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.ondev.qrscanner.Utils
+package com.ondev.qrscannermodule.Utils
 
 import android.app.Activity
 import android.content.ContentResolver
