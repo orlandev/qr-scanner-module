@@ -22,6 +22,7 @@ import android.util.Log
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.google.android.gms.common.images.Size
 import com.ondev.qrscannermodule.R
 import com.ondev.qrscannermodule.Utils.BarcodeUtils
@@ -88,7 +89,7 @@ class CameraSourcePreview(context: Context, attrs: AttributeSet) : FrameLayout(c
             } else {
                 size.width.toFloat() / size.height
             }
-        } ?: layoutWidth.toFloat() / layoutHeight.toFloat()
+        } ?: (layoutWidth.toFloat() / layoutHeight.toFloat())
 
         // Match the width of the child view to its parent.
         val childHeight = (layoutWidth / previewSizeRatio).toInt()
@@ -120,6 +121,7 @@ class CameraSourcePreview(context: Context, attrs: AttributeSet) : FrameLayout(c
         try {
             startIfReady()
         } catch (e: IOException) {
+            Toast.makeText(context, "Could not start camera source.", Toast.LENGTH_LONG).show()
             Log.e(TAG, "Could not start camera source.", e)
         }
     }
@@ -130,6 +132,7 @@ class CameraSourcePreview(context: Context, attrs: AttributeSet) : FrameLayout(c
             try {
                 startIfReady()
             } catch (e: IOException) {
+                Toast.makeText(context, "Could not start camera source.", Toast.LENGTH_LONG).show()
                 Log.e(TAG, "Could not start camera source.", e)
             }
         }
